@@ -1,0 +1,11 @@
+# Netlify config for the dev site (dev.the1stopsolution.in, deployed from `develop`).
+# Prod is served by GitHub Pages, which ignores this file.
+
+[build]
+  publish = "."
+
+# Keep the dev site out of search engines so it doesn't compete with prod.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
