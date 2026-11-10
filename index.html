@@ -131,7 +131,37 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdro
 .plan .who{color:var(--muted);font-size:.95rem;min-height:3em}
 .price{font-size:2.4rem;font-weight:800;color:var(--ink);margin:16px 0 2px;letter-spacing:-.02em}
 .price small{white-space:nowrap;font-size:.95rem;font-weight:600;color:var(--muted);letter-spacing:0}
-.plan .ticks{margin:20px 0 28px;flex:1}
+.price .from{font-size:.95rem;font-weight:600;color:var(--muted);letter-spacing:0}
+.plan .ticks{margin:20px 0;flex:1}
+.plan .pay{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin:0 0 20px}
+.plan .pay strong{color:var(--ink)}
+.plan.featured .pay{border-color:rgba(255,255,255,.14);color:#94a3b8}
+.plan.featured .pay strong{color:#fff}
+.plan.featured .price .from{color:#94a3b8}
+.plan .plus{margin:4px 0 0;font-size:.92rem;font-weight:700;color:var(--ink)}
+.plan.featured .plus{color:#67e8f9}
+.kick{display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:center;background:#fff;border:2px solid var(--blue);border-radius:20px;padding:28px 32px;margin-top:32px;position:relative}
+.kick .badge{left:32px;transform:none}
+.kick .tag{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue)}
+.kick h3{font-size:1.4rem;margin:6px 0}
+.kick .who{color:var(--muted);font-size:.95rem;margin:0 0 16px}
+.kick .ticks{grid-template-columns:1fr 1fr;gap:8px 24px}
+.kick .credit{margin:16px 0 0;font-size:.9rem;color:var(--ink);font-weight:600}
+.kick-buy{text-align:center;min-width:220px}
+.kick-buy .price{margin:0 0 4px}
+.kick-buy .pay{font-size:.88rem;color:var(--muted);margin:0 0 16px}
+.kick-buy .btn{width:100%}
+@media (max-width:900px){.kick{grid-template-columns:1fr;padding:28px}.kick-buy{text-align:left}}
+@media (max-width:640px){.kick .ticks{grid-template-columns:1fr}}
+.pay-head{text-align:center;font-size:1.4rem;margin:56px 0 6px}
+.pay-sub{text-align:center;color:var(--muted);margin:0 auto 24px;max-width:560px}
+.paytypes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.paytype{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.paytype h4{font-size:1.1rem;margin-bottom:2px}
+.paytype .covers{font-size:.9rem;color:var(--muted);margin:0 0 6px}
+.paytype dl{margin:0;font-size:.92rem}
+.paytype dt{font-weight:700;color:var(--ink);margin-top:12px}
+.paytype dd{margin:2px 0 0}
 .plan .btn{width:100%}
 .plan.featured{background:var(--navy);border:2px solid var(--blue);color:#cbd5e1;box-shadow:0 24px 50px -20px rgba(37,99,235,.55)}
 .plan.featured h3,.plan.featured .price{color:#fff}
@@ -140,7 +170,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdro
 .plan.featured .ticks li::before{filter:brightness(1.6)}
 .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--blue),var(--cyan));color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px;white-space:nowrap}
 .fine{margin-top:28px;font-size:.9rem;color:var(--muted);text-align:center}
-@media (max-width:900px){.plans{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+@media (max-width:900px){.plans,.paytypes{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.kick{max-width:480px;margin-left:auto;margin-right:auto}}
 
 /* Process */
 .process{background:var(--navy);color:#cbd5e1}
@@ -337,53 +367,107 @@ dialog::backdrop{background:rgba(11,23,54,.65)}
     <div class="wrap">
       <div class="section-head center">
         <span class="eyebrow">Pricing</span>
-        <h2>Clear packages. No surprises.</h2>
-        <p class="lead">Every project starts with a free call and a written quote. You'll know exactly what you get and what it costs before you pay anything.</p>
+        <h2>Clear prices. You always know how you pay.</h2>
+        <p class="lead">Every project starts with a free call and a written quote. Each price below says whether it is one-time, paid in milestones, or monthly.</p>
       </div>
       <div class="plans">
         <article class="plan">
-          <span class="tag">Starter</span>
-          <h3>Get Online</h3>
-          <p class="who">For new businesses that need to show up on Google and social media.</p>
-          <div class="price">₹6,999 <small>one-time</small></div>
+          <span class="tag">Build</span>
+          <h3>Website or store</h3>
+          <p class="who">For businesses that need a site that brings in enquiries and orders.</p>
+          <div class="price"><span class="from">from</span> ₹19,999 <small>one-time</small></div>
           <ul class="ticks">
-            <li>SEO audit and basic setup</li>
-            <li>Google Business Profile setup</li>
-            <li>Social media starter kit (profiles, banners, first posts)</li>
-            <li>Analytics set up so you can see visitors</li>
-            <li class="no">Custom website or app build</li>
+            <li>Business website, up to 5 pages: from ₹19,999</li>
+            <li>Up to 10 pages with a blog: from ₹34,999</li>
+            <li>Online store (Shopify or WooCommerce): from ₹59,999</li>
+            <li>Mobile-first design, WhatsApp button and basic SEO included</li>
+            <li>Optional care plan after launch: from ₹1,999 / month</li>
           </ul>
-          <a class="btn btn-ghost" href="#contact" data-plan="Starter (₹6,999)">Start with Starter</a>
+          <p class="pay"><strong>One-time price.</strong> Pay 50% to book and 50% before launch.</p>
+          <a class="btn btn-ghost" href="#contact" data-plan="Website or online store (from ₹19,999)">Get a website quote</a>
         </article>
         <article class="plan featured">
           <span class="badge">Most popular</span>
-          <span class="tag">Growth</span>
+          <span class="tag">Grow</span>
           <h3>Get Leads</h3>
           <p class="who">For businesses with a website that want a steady flow of enquiries.</p>
-          <div class="price">₹10,500 <small>/ month</small></div>
+          <div class="price"><span class="from">from</span> ₹9,999 <small>/ month</small></div>
+          <p class="plus">+ ₹14,999 one-time setup for ads</p>
           <ul class="ticks">
-            <li>Landing page built or optimised to convert</li>
-            <li>Lead funnel with WhatsApp or CRM follow-up</li>
-            <li>Google Ads and Meta Ads setup</li>
-            <li>Conversion tracking and a results report</li>
+            <li>Google or Meta ads managed: from ₹9,999 / month</li>
+            <li>Local SEO: from ₹9,999 / month</li>
+            <li>Setup covers your landing page, tracking and WhatsApp follow-up</li>
+            <li>Monthly report on leads and cost per lead</li>
           </ul>
-          <a class="btn btn-primary" href="#contact" data-plan="Growth (₹10,500/month)">Get more leads</a>
+          <p class="pay"><strong>Monthly, billed in advance.</strong> Setup is paid once, with month one. Your monthly price is locked for 12 months.</p>
+          <a class="btn btn-primary" href="#contact" data-plan="Ads or SEO (from ₹9,999/month)">Get more leads</a>
         </article>
         <article class="plan">
           <span class="tag">Custom</span>
-          <h3>Build &amp; Grow</h3>
-          <p class="who">For a full website or app build plus ongoing marketing.</p>
-          <div class="price">Custom <small>fixed quote</small></div>
+          <h3>Apps &amp; custom builds</h3>
+          <p class="who">For mobile apps, web apps and dashboards built around your business.</p>
+          <div class="price"><span class="from">from</span> ₹1,50,000</div>
           <ul class="ticks">
-            <li>Custom website, store or mobile app</li>
-            <li>SEO and ads run as one plan</li>
+            <li>Android and iOS app (Flutter or React Native)</li>
+            <li>Custom web apps, dashboards and integrations</li>
+            <li>Fixed price in writing after a free scoping call</li>
             <li>One dedicated point of contact</li>
-            <li>Milestone-based payments</li>
+            <li>Optional app care plan after launch: from ₹4,999 / month</li>
           </ul>
-          <a class="btn btn-ghost" href="#contact" data-plan="Custom build">Get a custom quote</a>
+          <p class="pay"><strong>Paid in 4 milestones:</strong> 30% to book, 30% on design approval, 30% on the test build, 10% at launch. Larger projects are split into smaller stages, about a month apart.</p>
+          <a class="btn btn-ghost" href="#contact" data-plan="App or custom build (from ₹1,50,000)">Get a custom quote</a>
         </article>
       </div>
-      <p class="fine">Growth is billed monthly: month one covers setup, after that we run and improve your campaigns. Cancel with 15 days' notice.<br>Ad spend on Google and Meta is paid by you, directly to the platform, from your own ad account.</p>
+      <div class="kick">
+        <span class="badge">Lowest-cost start</span>
+        <div>
+          <span class="tag">Starter</span>
+          <h3>Digital Kickstart</h3>
+          <p class="who">No website yet? Get found on Google and social media first.</p>
+          <ul class="ticks">
+            <li>Google Business Profile set up for Maps and local search</li>
+            <li>SEO audit report</li>
+            <li>Social media profiles, banners and first posts</li>
+            <li>Analytics set up so you can see visitors</li>
+          </ul>
+          <p class="credit">Book a website within 30 days and the full ₹6,999 comes off its price.</p>
+        </div>
+        <div class="kick-buy">
+          <div class="price">₹6,999 <small>one-time</small></div>
+          <p class="pay">Paid upfront. No monthly fee.</p>
+          <a class="btn btn-primary" href="#contact" data-plan="Digital Kickstart (₹6,999)">Start with Kickstart</a>
+        </div>
+      </div>
+
+      <h3 class="pay-head">How you pay</h3>
+      <p class="pay-sub">Every quote names one of these three, so there is no confusion later.</p>
+      <div class="paytypes">
+        <div class="paytype">
+          <h4>One-time</h4>
+          <p class="covers">Websites, online stores, landing pages, setup work</p>
+          <dl>
+            <dt>When you pay</dt><dd>Small jobs under ₹15,000 are paid upfront. Websites and stores are 50% to book and 50% before launch.</dd>
+            <dt>Can it change?</dt><dd>No. The quoted price is fixed for the agreed scope.</dd>
+          </dl>
+        </div>
+        <div class="paytype">
+          <h4>Milestones</h4>
+          <p class="covers">Mobile apps, custom builds and large online stores</p>
+          <dl>
+            <dt>When you pay</dt><dd>In four parts, each due only after you approve the previous stage: 30%, 30%, 30% and 10%. Projects above ₹3,50,000 are split into six smaller stages, about a month apart.</dd>
+            <dt>Can it change?</dt><dd>Only if you add or change features. We quote the extra work in writing first.</dd>
+          </dl>
+        </div>
+        <div class="paytype">
+          <h4>Monthly</h4>
+          <p class="covers">Ads management, SEO, website and app care plans</p>
+          <dl>
+            <dt>When you pay</dt><dd>In advance, on the same date each month. Cancel with 15 days' notice after the first 2 to 3 months.</dd>
+            <dt>Can it change?</dt><dd>Not for 12 months. After that we review once a year and give 30 days' notice.</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="fine">Prices are for clients in India and exclude GST where applicable. Ad spend is paid by you, directly to Google or Meta, from your own ad account.<br>Domain, hosting and app store fees are not included. You pay them separately, at the provider's price with no markup from us. Based outside India? <a href="#contact">Ask for our international price list</a> in USD, GBP or AED.</p>
     </div>
   </section>
 
@@ -443,12 +527,19 @@ dialog::backdrop{background:rgba(11,23,54,.65)}
         <h2>Questions people ask before hiring us</h2>
       </div>
       <div class="faq-list">
-        <details><summary>Is ad spend included in your packages?</summary><p>No. Your Google and Meta ad budget is paid by you directly to the platform, so you keep full control and see every rupee. Our fee covers setup, management and reporting.</p></details>
+        <details><summary>Is the price one-time or monthly?</summary><p>It depends on the service, and every quote says which. Websites, online stores and apps have a one-time price. Ads management, SEO and care plans are monthly. Nothing renews or repeats unless your quote says "monthly".</p></details>
+        <details><summary>How do payments work?</summary><p>We agree the scope and price in writing first, and work starts once the booking payment is received. Jobs under ₹15,000 are paid upfront. Websites and stores are 50% to book and 50% before launch. Apps, custom builds and any other project above ₹1,00,000 are paid in four milestones (30%, 30%, 30%, 10%), each due after you approve the stage before it. Projects above ₹3,50,000 are split into six smaller stages about a month apart, so you never pay far ahead of the work. Monthly services are billed in advance.</p></details>
+        <details><summary>Will my price go up later?</summary><p>A one-time price never changes for the scope we agreed. A monthly price is locked for 12 months; after that we review it once a year and give you 30 days' written notice of any change. For ads management, the fee moves to the next tier only if your ad budget grows past your plan's limit for two months in a row.</p></details>
+        <details><summary>What if I want changes after we've agreed the scope?</summary><p>Each package includes two rounds of revisions. Anything new, such as extra pages, screens or features, is quoted in writing at ₹1,000 per hour, and we only start once you approve it. You will never find an extra on your invoice that you did not agree to.</p></details>
+        <details><summary>What is not included in the price?</summary><p>GST where applicable, your ad budget, and third-party costs: domain, hosting, paid themes or plugins, payment gateway charges, and app store accounts (Google Play is a $25 one-time fee and Apple is $99 a year, both set by them). We bill these at cost with no markup, or you can pay the provider directly.</p></details>
+        <details><summary>Is ad spend included in your packages?</summary><p>No. Your Google and Meta ad budget is paid by you directly to the platform, so you keep full control and see every rupee. Our fee covers setup, management and reporting. For a local business we suggest an ad budget of at least ₹15,000 a month.</p></details>
+        <details><summary>What happens after my website or app goes live?</summary><p>Bug fixes are free for 30 days after a website launches and 60 days after an app launches. After that you can manage it yourself or take an optional care plan, from ₹1,999 a month for websites and ₹4,999 a month for apps.</p></details>
+        <details><summary>What does the care plan include? Does it cover new features?</summary><p>The care plan keeps what we built running: software and security updates, backups, uptime monitoring, bug fixes, and up to 2 hours a month of small content edits such as text, images and prices. For apps it also covers updates needed for new Android and iOS versions and app store rules. It does not cover new pages, new features or redesigns; we quote those separately before starting. Hosting and domain charges are also separate.</p></details>
         <details><summary>Who owns the website, code and accounts?</summary><p>You do. Once the project is fully paid, the custom code, designs, domain and admin access are transferred to you.</p></details>
-        <details><summary>How do payments work?</summary><p>We agree the scope and price in writing first. Work starts after a booking deposit, and larger projects are paid in milestones.</p></details>
         <details><summary>Can you guarantee first place on Google?</summary><p>No honest agency can, because Google controls its rankings. What we do promise is proven SEO work and a clear monthly report showing rankings, traffic and leads.</p></details>
-        <details><summary>Can I cancel a monthly service?</summary><p>Yes. Monthly retainers can be paused or cancelled with 15 days' written notice before the next billing cycle.</p></details>
+        <details><summary>Can I cancel a monthly service?</summary><p>Yes. Monthly services have a short minimum term (2 months for ads, 3 months for SEO and care plans) because results take time to show. After that you can pause or cancel with 15 days' written notice before the next billing date.</p></details>
         <details><summary>Can we work together if we're in a different city?</summary><p>Yes. Everything from the first call to launch and monthly reports happens over video calls, WhatsApp and email, so it doesn't matter where your business is based.</p></details>
+        <details><summary>Do you work with clients outside India?</summary><p>Yes. We build websites and apps for businesses and agencies abroad, quote in USD, GBP or AED, and accept international bank transfer or Wise. Ask us for the international price list.</p></details>
       </div>
     </div>
   </section>
@@ -487,9 +578,10 @@ dialog::backdrop{background:rgba(11,23,54,.65)}
         <div><label for="f-plan">Package <span class="opt">(optional)</span></label>
           <select id="f-plan" name="plan">
             <option value="">Not decided</option>
-            <option>Starter (₹6,999)</option>
-            <option>Growth (₹10,500/month)</option>
-            <option>Custom build</option>
+            <option>Digital Kickstart (₹6,999)</option>
+            <option>Website or online store (from ₹19,999)</option>
+            <option>Ads or SEO (from ₹9,999/month)</option>
+            <option>App or custom build (from ₹1,50,000)</option>
           </select>
         </div>
         <div><label for="f-msg">Anything else? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" rows="3" placeholder="Your website link, goals, deadline..."></textarea></div>
@@ -597,6 +689,10 @@ dialog::backdrop{background:rgba(11,23,54,.65)}
                     <h4>2. Payment Terms & Invoicing</h4>
                     <ul>
                         <li>Standard projects require an advance booking deposit before development or campaign kickoff.</li>
+                        <li>One-time projects are paid as set out in the proposal: in full upfront for work under ₹15,000, in two parts (50% / 50%) for websites and stores, and in milestones for projects above ₹1,00,000. Each milestone is payable on approval of the preceding stage.</li>
+                        <li>A quoted project price is fixed for the agreed scope. Work outside that scope is estimated in writing and begins only after the client approves it.</li>
+                        <li>Monthly retainer fees are billed in advance and are fixed for 12 months from the start date. Thereafter they may be revised once a year with 30 days' written notice.</li>
+                        <li>Quotations are valid for 30 days. Prices exclude applicable taxes and third-party costs such as domain, hosting, licences and app store fees.</li>
                         <li>Advertising campaign budgets (Google Ads, Meta Ads ad spend) are payable directly to the ad platforms or funded in advance by the client.</li>
                         <li>Final project code, source repositories, domain transfers, and full administrative access are transferred upon complete payment clearance.</li>
                     </ul>
@@ -626,7 +722,7 @@ dialog::backdrop{background:rgba(11,23,54,.65)}
                     <h4>2. Digital Marketing, SEO & Traffic Services</h4>
                     <ul>
                         <li>Direct advertising spend consumed on Meta Ads, Google Ads, or media buying platforms is non-refundable once deployed into live bidding networks.</li>
-                        <li>Monthly agency retainer fees can be paused or cancelled with 15 days' written notice prior to the subsequent billing cycle.</li>
+                        <li>After any minimum term stated in the proposal, monthly agency retainer fees can be paused or cancelled with 15 days' written notice prior to the subsequent billing cycle. Fees for a billing month that has started are non-refundable.</li>
                     </ul>
 
                     <h4>3. Refund Processing Timelines</h4>
