@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Marketing site for **The 1 Stop Solution** (Lucknow-based agency: websites, apps, SEO, ads). It is a single static page — no build step, no package manager, no tests, no linter.
 
-- `index.html` — the entire site: inline `<style>`, markup, and one inline `<script>` at the bottom. No external JS; only Google Fonts (Plus Jakarta Sans) is loaded externally.
+- `index.html` — the entire site: inline `<style>`, markup, and one inline `<script>` at the bottom. External loads are Google Fonts (Plus Jakarta Sans) and Google Tag Manager (`GTM-T2XGS6KG`, top of `<head>`). GTM only loads when the hostname is the prod domain, so the dev site and local previews don't send analytics — keep that guard.
 - `CNAME` — custom domain for GitHub Pages (`the1stopsolution.in`).
 - `netlify.toml` — config for the dev site only (see Deployment).
 
